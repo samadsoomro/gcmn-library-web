@@ -1,0 +1,168 @@
+/* Contact Page Styles */
+.contact-page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.contact-header {
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: var(--text-white);
+  text-align: center;
+}
+
+.contact-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--text-white);
+  margin: 0 0 var(--space-md);
+}
+
+.contact-subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.contact-content {
+  padding: var(--space-3xl) 0;
+}
+
+/* Contact Info Grid */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+}
+
+.contact-info-card {
+  padding: var(--space-2xl);
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-info-icon {
+  display: inline-flex;
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, rgba(10, 102, 56, 0.1) 0%, rgba(20, 133, 79, 0.1) 100%);
+  border-radius: var(--radius-full);
+  color: var(--primary);
+  margin-bottom: var(--space-lg);
+}
+
+.contact-info-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-md);
+}
+
+.contact-info-content {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* Map Section */
+.contact-map-section {
+  margin-top: var(--space-3xl);
+  padding: var(--space-2xl);
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2xl);
+}
+
+.map-container-split {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-2xl);
+  min-height: 500px;
+}
+
+.pakistan-map-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(10, 102, 56, 0.05) 0%, rgba(20, 133, 79, 0.05) 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  color: var(--primary);
+}
+
+.map-overlay-text {
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+.map-overlay-text h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 var(--space-sm);
+}
+
+.map-overlay-text p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.google-map-embed {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .map-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .pakistan-map-visual {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .google-map-embed iframe {
+    min-height: 400px;
+  }
+
+  .map-container-split {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .pakistan-map-visual {
+    min-height: 300px;
+  }
+}

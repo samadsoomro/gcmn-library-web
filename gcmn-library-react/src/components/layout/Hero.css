@@ -1,0 +1,270 @@
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(80px + var(--space-3xl)) 0 var(--space-3xl);
+  overflow: hidden;
+  background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+}
+
+/* Watermark Logo */
+.hero-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 800px;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-watermark-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Pakistan Map Background */
+.hero-pakistan-map {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 50%;
+  max-width: 600px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  color: var(--primary);
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: var(--space-sm) var(--space-lg);
+  background: linear-gradient(135deg, rgba(10, 102, 56, 0.1) 0%, rgba(20, 133, 79, 0.1) 100%);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-full);
+}
+
+.hero-badge-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Title */
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.hero-title-highlight {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Description */
+.hero-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0;
+}
+
+/* Actions */
+.hero-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* Stats */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 2px solid var(--border-light);
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-number {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 var(--space-xs);
+}
+
+.hero-stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Feature Cards */
+.hero-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.hero-feature-card {
+  background: var(--bg-primary);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.hero-feature-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--primary-gradient);
+  color: var(--text-white);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-md);
+}
+
+.hero-feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-sm);
+}
+
+.hero-feature-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-md);
+  line-height: 1.6;
+}
+
+.hero-feature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  transition: gap var(--transition-fast);
+}
+
+.hero-feature-link:hover {
+  gap: var(--space-sm);
+}
+
+/* Decorative Elements */
+.hero-decoration {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-decoration-1 {
+  width: 400px;
+  height: 400px;
+  top: -200px;
+  left: -200px;
+}
+
+.hero-decoration-2 {
+  width: 300px;
+  height: 300px;
+  bottom: -150px;
+  right: -150px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .hero-features {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--space-md);
+  }
+
+  .hero-feature-card {
+    min-width: 280px;
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: calc(60px + var(--space-2xl)) 0 var(--space-2xl);
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-watermark {
+    width: 80%;
+  }
+
+  .hero-pakistan-map {
+    width: 70%;
+    right: -20%;
+  }
+}
